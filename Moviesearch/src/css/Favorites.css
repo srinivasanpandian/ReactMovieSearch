@@ -1,0 +1,156 @@
+.favorites {
+  padding: 2rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.favorites h2 {
+  margin-bottom: 2rem;
+  text-align: center;
+  font-size: 2.5rem;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+.fav-button {
+  display: inline-block; /* Ensures it's visible */
+  padding: 8px 12px;
+  font-size: 1rem;
+  color: white;
+  background-color: #e50914;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+.fav-button:hover {
+  background-color: #b20710;
+}
+
+.movies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+/* If no favorite movies are added */
+.favorites-empty {
+  text-align: center;
+  padding: 4rem 2rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  margin: 2rem auto;
+  max-width: 600px;
+}
+
+.favorites-empty h2 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  color: #e50914;
+}
+
+.favorites-empty p {
+  color: #999;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+/* Animation for new favorites being added */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.movies-grid > * {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .favorites {
+    padding: 1.5rem;
+  }
+
+  .favorites h2 {
+    font-size: 2rem;
+  }
+
+  .movies-grid {
+    gap: 1rem;
+  }
+
+  .favorites-empty {
+    padding: 3rem 1.5rem;
+    max-width: 500px;
+  }
+
+  .favorites-empty h2 {
+    font-size: 1.8rem;
+  }
+
+  .favorites-empty p {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .favorites {
+    padding: 1rem;
+  }
+
+  .favorites h2 {
+    font-size: 1.8rem;
+  }
+
+  .movies-grid {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  }
+
+  .favorites-empty {
+    padding: 2.5rem 1rem;
+    max-width: 400px;
+  }
+
+  .favorites-empty h2 {
+    font-size: 1.6rem;
+  }
+
+  .favorites-empty p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .favorites {
+    padding: 0.8rem;
+  }
+
+  .favorites h2 {
+    font-size: 1.5rem;
+  }
+
+  .movies-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 0.8rem;
+  }
+
+  .favorites-empty {
+    padding: 2rem 0.8rem;
+    max-width: 90%;
+  }
+
+  .favorites-empty h2 {
+    font-size: 1.4rem;
+  }
+
+  .favorites-empty p {
+    font-size: 0.9rem;
+  }
+}
